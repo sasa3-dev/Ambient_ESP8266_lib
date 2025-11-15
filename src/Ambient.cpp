@@ -468,7 +468,7 @@ Ambient::getchannel(const char * userKey, const char * devKey, unsigned int & ch
     to = buf.indexOf("\",", from);
     channelId = buf.substring(from, to).toInt();
     from = buf.indexOf("\"writeKey\":\"") + strlen("\"writeKey\":\"");
-    to = buf.indexOf("\",", from);
+    to = buf.indexOf("\"}", from);
     buf.substring(from, to).toCharArray(writeKey, len);
 
     this->client->stop();
